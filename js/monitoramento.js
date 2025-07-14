@@ -5,12 +5,12 @@ $.ajax({
         for(let i in data){
             if(data[i].status == 'indisponivel') {
                 $('#cartoes').append(`<div class="cartao cartao-indisponivel">
-                    <div>${data[i].nome}</div>
+                    <div>${data[i].nome}(${data[i].nome_agente})</div>
                     <span class="${data[i].status} icone-posicao"></span>
                 </div>`)
             } else {
                 $('#cartoes').append(`<div class="cartao">
-                    <div>${data[i].nome}</div>
+                    <div>${data[i].nome}(${data[i].nome_agente})</div>
                     <span class="${data[i].status} icone-posicao"></span>
                 </div>`)
             }

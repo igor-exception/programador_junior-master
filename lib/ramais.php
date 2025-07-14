@@ -11,27 +11,27 @@ foreach($filas as $linhas){
         if(strstr($linhas,'(Ring)')){
             $linha = explode(' ', trim($linhas));
             list($tech,$ramal) = explode('/',$linha[0]);
-            $status_ramais[$ramal] = array('status' => 'chamando');
+            $status_ramais[$ramal] = array('status' => 'chamando', 'agent_username' => end($linha));
         }
         if(strstr($linhas,'(In use)')){            
             $linha = explode(' ', trim($linhas));
             list($tech,$ramal) = explode('/',$linha[0]);
-            $status_ramais[$ramal] = array('status' => 'ocupado');    
+            $status_ramais[$ramal] = array('status' => 'ocupado', 'agent_username' => end($linha));
         }
         if(strstr($linhas,'(Not in use)')){
             $linha = explode(' ', trim($linhas));
             list($tech,$ramal)  = explode('/',$linha[0]);
-            $status_ramais[$ramal] = array('status' => 'disponivel');    
+            $status_ramais[$ramal] = array('status' => 'disponivel', 'agent_username' => end($linha));
         }
         if(strstr($linhas,'(Unavailable)')){
             $linha = explode(' ', trim($linhas));
             list($tech,$ramal)  = explode('/',$linha[0]);
-            $status_ramais[$ramal] = array('status' => 'indisponivel');    
+            $status_ramais[$ramal] = array('status' => 'indisponivel', 'agent_username' => end($linha));
         }
         if(strstr($linhas,'(paused)')){
             $linha = explode(' ', trim($linhas));
             list($tech,$ramal)  = explode('/',$linha[0]);
-            $status_ramais[$ramal] = array('status' => 'pausado');    
+            $status_ramais[$ramal] = array('status' => 'pausado', 'agent_username' => end($linha));
         }
     }
 }
@@ -44,6 +44,7 @@ foreach($ramais as $linhas){
         $info_ramais[$name] = array(
             'nome' => $name,
             'ramal' => $username,
+            'nome_agente' => $status_ramais[$name]['agent_username'],
             'online' => false,
             'status' => $status_ramais[$name]['status']
         );
@@ -53,6 +54,7 @@ foreach($ramais as $linhas){
         $info_ramais[$name] = array(
             'nome' => $name,
             'ramal' => $username,
+            'nome_agente' => $status_ramais[$name]['agent_username'],
             'online' => true,
             'status' => $status_ramais[$name]['status']
         );
