@@ -11,6 +11,10 @@
     margin: 2px;
 }
 
+.cartao-indisponivel {
+    background: #cccbcb;
+}
+
 .ocupado {
     width: 15px;
     height: 15px;
@@ -37,6 +41,13 @@
     height: 15px;
     border-radius: 50%;
     background-color: #04ea04;
+}
+
+.indisponivel {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #646464;
 }
 
 .icone-posicao {

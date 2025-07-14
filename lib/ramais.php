@@ -23,6 +23,11 @@ foreach($filas as $linhas){
             list($tech,$ramal)  = explode('/',$linha[0]);
             $status_ramais[$ramal] = array('status' => 'disponivel');    
         }
+        if(strstr($linhas,'(Unavailable)')){
+            $linha = explode(' ', trim($linhas));
+            list($tech,$ramal)  = explode('/',$linha[0]);
+            $status_ramais[$ramal] = array('status' => 'indisponivel');    
+        }
     }
 }
 $info_ramais = array();
