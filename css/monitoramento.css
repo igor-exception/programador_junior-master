@@ -22,6 +22,13 @@
     background-color: #ff0000;
 }
 
+.pausado {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ff9900;
+}
+
 .chamando {
     width: 15px;
     height: 15px;

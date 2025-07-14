@@ -28,6 +28,11 @@ foreach($filas as $linhas){
             list($tech,$ramal)  = explode('/',$linha[0]);
             $status_ramais[$ramal] = array('status' => 'indisponivel');    
         }
+        if(strstr($linhas,'(paused)')){
+            $linha = explode(' ', trim($linhas));
+            list($tech,$ramal)  = explode('/',$linha[0]);
+            $status_ramais[$ramal] = array('status' => 'pausado');    
+        }
     }
 }
 $info_ramais = array();
