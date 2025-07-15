@@ -1,7 +1,7 @@
 $.ajax({
-    url: "http://localhost:8000/lib/ramais.php",
+    url: "http://localhost:8000/lib/ramais-api.php",
     type: "GET",
-    success: function(data){                
+    success: function(data){
         for(let i in data){
             if(data[i].status == 'indisponivel') {
                 $('#cartoes').append(`<div class="cartao cartao-indisponivel">
