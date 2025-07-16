@@ -62,7 +62,7 @@ class Ramais
             throw new Exception("Arquivo: {$this->arquivo_ramal} vazio.");
         }
         foreach($ramais as $linhas){
-            $linha = array_filter(explode(' ',$linhas));
+            $linha = array_filter(explode('  ',$linhas));
             $arr = array_values($linha);
 
             if(!str_contains($arr[0], '/')){
@@ -75,20 +75,23 @@ class Ramais
                     'nome' => $name,
                     'ramal' => $username,
                     'nome_agente' => $this->status_ramais[$name]['agent_username'],
+                    'ip' => null,
+                    'porta' => null,
                     'online' => false,
                     'status' => $this->status_ramais[$name]['status']
                 );
             }
-            if(isset($arr[5]) AND trim($arr[5]) == "OK"){
+            if(isset($arr[5]) AND str_contains($arr[5], "OK")){
                 $this->info_ramais[$name] = array(
                     'nome' => $name,
                     'ramal' => $username,
                     'nome_agente' => $this->status_ramais[$name]['agent_username'],
+                    'ip' => $arr[1],
+                    'porta' => $arr[4],
                     'online' => true,
                     'status' => $this->status_ramais[$name]['status']
                 );
             }
-            
         }
     }
 

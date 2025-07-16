@@ -16,7 +16,11 @@ $.ajax({
             }
         }
     },
-    error: function(){
-        console.log("Errouu!")
+    error: function(jqXHR) {
+        $('#cartoes').html(`<div class="cartao cartao-erro">
+            Erro ao carregar os ramais.
+        </div>`);
+
+        console.log("Erro AJAX:", jqXHR.responseText);
     }
 });

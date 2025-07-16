@@ -22,4 +22,22 @@ O teste também contará com algumas atividades obrigatórias:
 3. Estes arquivos se completam  
 4. Estes arquivos NÃO devem unidos em um só arquivo  
 5. Estes arquivos poderão ser alterados apenas para teste do AJAX  
-6. Ao concluir o teste, deverá ser encaminhado um arquivo .zip contendo todo o código, dump da base de dados e instruções de instalação e a lista das melhorias aplicadas.  
+6. Ao concluir o teste, deverá ser encaminhado um arquivo .zip contendo todo o código, dump da base de dados e instruções de instalação e a lista das melhorias aplicadas. 
+
+
+## Script Criação Banco/tabela
+```
+CREATE DATABASE callcenter;
+use callcenter;
+CREATE TABLE ramais (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    numero VARCHAR(10) UNIQUE,
+    nome VARCHAR(50),
+    nome_agente VARCHAR(50),
+    ip VARCHAR(50),
+    porta VARCHAR(50),
+    `online` TINYINT(1),
+    status VARCHAR(20),
+    atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+```
