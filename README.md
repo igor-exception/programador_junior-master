@@ -136,9 +136,8 @@ Abaixo estão algumas imagens do funcionamento do sistema.
 
 As imagens estão na pasta `prints/` do projeto.
 
-```markdown
+
 ![Painel Principal](prints/1.jpg)
 ![Tooltip de Status](prints/2.jpg)
 ![Busca de Agente](prints/3.jpg)
 ![Detalhe por Status ao clicar no card](prints/4.jpg)
-```
