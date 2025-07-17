@@ -1,37 +1,53 @@
+<!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/monitoramento.css">
+    <title>Monitoramento de Ramais</title>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/monitoramento.css">
-  <title>Monitoramento de Ramais</title>
+  <body>
+    <div class="container">
+      <div class="row mt-4 mb-3">
+        <div class="col text-center">
+          <h1>Painel de monitoramento de ramal</h1>
+        </div>
+      </div>
 
-</head>
+      <div class="row mb-2 pb-2">
+        <div class="col-12 text-center">
+          <input type="text" id="filtro" placeholder="Buscar agente..." class="form-control w-auto mx-auto" style="max-width: 300px;">
+        </div>
+      </div>
 
-<body>
-  <div class="container">
-    <div class="row">
-      <h1>Painel de monitoramento de ramal TESTE</h1>
-    </div>
-    <div class="row">
-      <div id="cartoes">
+      <div class="row">
+        <div class="col-md-8">
+          <div id="cartoes" class="d-flex flex-wrap justify-content-start"></div>
+        </div>
+
+        <div class="col-md-4 align-self-start ps-md-4 mt-3">
+          <h5 class="titulo-tabela">Resumo de Status</h5>
+          <table class="table table-bordered table-style" id="tabela-status">
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Quantidade</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="container">
-    <p>
-      
-    </p>
-  </div>
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/monitoramento.js"></script>
 
-  <script src="js/jquery-3.2.1.slim.min.js"></script>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/monitoramento.js"></script>
-
-</body>
+  </body>
 
 </html>
