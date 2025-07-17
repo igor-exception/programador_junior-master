@@ -51,7 +51,11 @@ class HistoricoAgente {
             if (isset($this->registros[$i + 1])) {
                 $fim = new DateTime($this->registros[$i + 1]['data_hora']);
             } else {
-                $fim = new DateTime($this->fim . ' 23:59:59');
+                if ($this->fim === date('Y-m-d')) {
+                    $fim = new DateTime();
+                } else {
+                    $fim = new DateTime($this->fim . ' 23:59:59');
+                }
             }
 
             $segundos = $fim->getTimestamp() - $inicio->getTimestamp();
