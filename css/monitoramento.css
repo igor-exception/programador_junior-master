@@ -96,3 +96,13 @@ tr>td {
 .titulo-tabela {
     text-align: center;
 }
+
+.cartao-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cartao-link:hover {
+  transform: scale(1.02);
+  transition: 0.2s ease;
+}

@@ -11,12 +11,14 @@ function atualizarCartoes() {
 
           for (let i in data) {
             const classeCartao = data[i].status === 'indisponivel' ? 'cartao cartao-indisponivel' : 'cartao';
-
+            const hoje = new Date().toISOString().split('T')[0];
             $('#cartoes').append(`
-              <div class="${classeCartao}">
-                <div>${data[i].nome} (${data[i].nome_agente ?? ''})</div>
-                <span class="${data[i].status} icone-posicao" data-toggle="tooltip" title="${data[i].status}"></span>
-              </div>
+              <a href="/lib/detalhe.php?agente=${encodeURIComponent(data[i].nome_agente)}&inicio=${hoje}&fim=${hoje}" target="_blank" class="cartao-link">
+                <div class="${classeCartao}">
+                  <div>${data[i].nome} (${data[i].nome_agente ?? ''})</div>
+                  <span class="${data[i].status} icone-posicao" data-toggle="tooltip" title="${data[i].status}"></span>
+                </div>
+              </a>
             `);
           }
 
